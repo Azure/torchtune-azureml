@@ -1,0 +1,21 @@
+# Model arguments
+model:
+  _component_: torchtune.models.qwen2.lora_qwen2_0_5b
+
+checkpointer:
+  _component_: torchtune.training.FullModelHFCheckpointer
+  checkpoint_dir: {{model_output_dir}}
+  checkpoint_files: [
+    hf_model_0001_0.pt
+  ]
+  recipe_checkpoint: null
+  output_dir: {{model_output_dir}}/quant
+  model_type: QWEN2
+
+device: cuda
+dtype: bf16
+seed: 1234
+
+quantizer:
+  _component_: torchtune.training.quantization.Int8DynActInt4WeightQuantizer
+  groupsize: 256

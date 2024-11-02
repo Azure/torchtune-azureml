@@ -1,0 +1,22 @@
+# Model arguments
+model:
+  _component_: torchtune.models.phi3.phi3_mini
+
+checkpointer:
+  _component_: torchtune.training.FullModelHFCheckpointer
+  checkpoint_dir: {{model_output_dir}}
+  checkpoint_files: [
+    hf_model_0001_0.pt,
+    hf_model_0002_0.pt
+  ]
+  recipe_checkpoint: null
+  output_dir: {{model_output_dir}}/quant
+  model_type: PHI3_MINI
+
+device: cuda
+dtype: bf16
+seed: 1234
+
+quantizer:
+  _component_: torchtune.training.quantization.Int8DynActInt4WeightQuantizer
+  groupsize: 256
