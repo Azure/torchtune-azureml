@@ -403,3 +403,6 @@ FodyWeavers.xsd
 **/._.DS_Store
 
 .env
+
+sft_dataset/
+dpo_dataset/
