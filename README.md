@@ -24,6 +24,9 @@ The representative features are as follows:
 For more information about torchtune, please check [this link](https://pytorch.org/torchtune/).
 
 ### Azure ML with torchtune 
+
+![architecture](./imgs/torchtune-azureml-architecture.png)
+
 Running Torchtune on AzureML offers several advantages that streamline the GenAI workflow. Here are some key benefits of using AzureML with torchtune:
 
 - **Scalability and Compute Power**: Azure ML provides powerful, scalable compute resources, allowing torchtune to handle multiple SLMs/LLMs across multiple GPUs or distributed clusters. This makes it ideal for efficiently managing intensive tasks like fine-tuning and quantization on large datasets.
