@@ -6,7 +6,7 @@ This hands-on walks you through fine-tuning/evaluation/quanzitation an open sour
 2. Hackathon starter code
 3. Reference guide for SLM fine-tuning&serving PoC/Prototype
 
-[**Introduction**](#introduction) | [**Get Started**](#get-started) | [**Blog**](coming_soon) 
+[**Introduction**](#introduction) | [**Get Started**](#get-started) | [**Microsoft Tech Blog**](https://techcommunity.microsoft.com/t5/ai-machine-learning-blog/fine-tune-evaluate-quantize-slm-llm-using-the-torchtune-on-azure/ba-p/4285663) 
 
 ## Introduction
 
@@ -16,10 +16,10 @@ torchtune is a Python library designed to simplify fine-tune SLM/LLM models usin
 
 The representative features are as follows:
 
-- **Easy Model Tuning**: Torchtune is a PyTorch-native library that simplifies the SLM fine-tuning, making it accessible to users without advanced AI expertise. 
-- **Easy Application of Distributed Training**: Torchtune simplifies the setup for distributed training, allowing users to scale their models across multiple GPUs with minimal configuration. This feature significantly reduces users' trial-and-errors.
-- **Simplified Model Evaluation and Quantization**: Torchtune makes model evaluation and quantization straightforward, providing built-in support to easily assess model performance and optimize models for deployment.
-- **Scalability and Portability**: Torchtune is flexible enough to be used on various cloud platforms and local environments. It can be easily integrated with AzureML.
+- **Easy Model Tuning**: torchtune is a PyTorch-native library that simplifies the SLM fine-tuning, making it accessible to users without advanced AI expertise. 
+- **Easy Application of Distributed Training**: torchtune simplifies the setup for distributed training, allowing users to scale their models across multiple GPUs with minimal configuration. This feature significantly reduces users' trial-and-errors.
+- **Simplified Model Evaluation and Quantization**: torchtune makes model evaluation and quantization straightforward, providing built-in support to easily assess model performance and optimize models for deployment.
+- **Scalability and Portability**: torchtune is flexible enough to be used on various cloud platforms and local environments. It can be easily integrated with AzureML.
 
 For more information about torchtune, please check [this link](https://pytorch.org/torchtune/).
 
@@ -27,11 +27,11 @@ For more information about torchtune, please check [this link](https://pytorch.o
 
 ![architecture](./imgs/torchtune-azureml-architecture.png)
 
-Running Torchtune on AzureML offers several advantages that streamline the GenAI workflow. Here are some key benefits of using AzureML with torchtune:
+Running torchtune on AzureML offers several advantages that streamline the GenAI workflow. Here are some key benefits of using AzureML with torchtune:
 
 - **Scalability and Compute Power**: Azure ML provides powerful, scalable compute resources, allowing torchtune to handle multiple SLMs/LLMs across multiple GPUs or distributed clusters. This makes it ideal for efficiently managing intensive tasks like fine-tuning and quantization on large datasets.
 - **Managed ML Environment**: Azure ML offers a fully managed environment, so setting up dependencies and managing versions are handled with ease. This reduces setup time for torchtune, letting users focus directly on model optimization without infrastructure concerns.
-- **Model Deployment and Scaling**: Once the model is optimized with Torchtune, AzureML provides a straightforward pathway to deploy it on Azure’s cloud infrastructure, making it easy to scale applications to production with robust monitoring and scaling features.
+- **Model Deployment and Scaling**: Once the model is optimized with torchtune, AzureML provides a straightforward pathway to deploy it on Azure’s cloud infrastructure, making it easy to scale applications to production with robust monitoring and scaling features.
 - **Seamless Integration with Other Azure Services**: Users can leverage other Azure services, such as Azure Blob Storage for dataset storage or Azure SQL for data management. This ecosystem support enhances workflow efficiency and makes AzureML a powerful choice for torchtune-based model tuning and deployment.
 
 ## Get Started
@@ -65,6 +65,10 @@ Before starting, you have met the following requirements:
 ## References
 
 - [Azure Machine Learning examples](https://github.com/Azure/azureml-examples)
+- [Azure ML Fine-tuning (Florence-2) Blog](https://techcommunity.microsoft.com/t5/ai-machine-learning-blog/fine-tuning-florence-2-for-vqa-visual-question-answering-using/ba-p/4181123)
+- [Synthetic QnA Generation Blog](https://techcommunity.microsoft.com/t5/ai-azure-ai-services-blog/generate-synthetic-qnas-from-real-world-data-on-azure/ba-p/4202053)
+- [torchtune official website](https://github.com/pytorch/torchtune)
+- [Fine-tune Meta Llama 3.1 models using torchtune on Amazon SageMaker](https://aws.amazon.com/blogs/machine-learning/fine-tune-meta-llama-3-1-models-using-torchtune-on-amazon-sagemaker/)
 
 ```bibtex
 @software{torchtune,
