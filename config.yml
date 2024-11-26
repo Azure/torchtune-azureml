@@ -23,7 +23,7 @@ train:
     eval_batch_size: 8
     model_dir: "./outputs"
     wandb_api_key: "" # Please modify to your W&B API key if you want to use W&B
-    wandb_project: "azureml-finetune"
+    wandb_project: "" # Please modify to your W&B project name
     wandb_watch: "gradients"
 
 serve:
