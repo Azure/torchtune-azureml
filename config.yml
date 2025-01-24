@@ -13,7 +13,7 @@ config:
     USE_LOWPRIORITY_VM: false
 
 train:
-    azure_env_name: "torchtune-2024-10-27" # Please modify to your AzureML env name
+    azure_env_name: "torchtune-2025-01-22" # Please modify to your AzureML env name
     azure_compute_cluster_name: "gpu-cluster-a100"
     azure_compute_cluster_size: "Standard_NC24ads_A100_v4" # 1 x A100 (80GB)
     # azure_compute_cluster_name="gpu-cluster-a100-2"
@@ -27,8 +27,8 @@ train:
     wandb_watch: "gradients"
 
 serve:
-    azure_env_name: "llm-serving-2024-10-27" # Please modify to your AzureML env name
-    azure_model_name: "phi3-finetune-2024-10-27" # Please modify to your AzureML model name
-    azure_endpoint_name: "phi3-endpoint-2024-10-27"
+    azure_env_name: "llm-serving-2025-01-22" # Please modify to your AzureML env name
+    azure_model_name: "phi3-finetune-2025-01-22" # Please modify to your AzureML model name
+    azure_endpoint_name: "phi3-endpoint-2025-01-22"
     azure_deployment_name: "phi3-blue"
     azure_serving_cluster_size: "Standard_NC24ads_A100_v4"

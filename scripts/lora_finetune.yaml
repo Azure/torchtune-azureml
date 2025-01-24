@@ -18,8 +18,8 @@
 # Model arguments
 model:
   _component_: torchtune.models.phi3.lora_phi3_mini
-  lora_attn_modules: ['q_proj', 'v_proj']
-  apply_lora_to_mlp: False
+  lora_attn_modules: ['q_proj', 'v_proj', 'output_proj']
+  apply_lora_to_mlp: True
   apply_lora_to_output: False
   lora_rank: 8
   lora_alpha: 16
@@ -70,10 +70,11 @@ optimizer:
   weight_decay: 0.01
   lr: 3e-4
 lr_scheduler:
-  _component_: torchtune.modules.get_cosine_schedule_with_warmup
+  _component_: torchtune.training.get_cosine_schedule_with_warmup
   num_warmup_steps: 100
 loss:
   _component_: torchtune.modules.loss.CEWithChunkedOutputLoss
+clip_grad_norm: null
 compile: False
 
 # Training env

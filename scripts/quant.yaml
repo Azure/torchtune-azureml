@@ -4,13 +4,14 @@ model:
 
 checkpointer:
   _component_: torchtune.training.FullModelHFCheckpointer
-  checkpoint_dir: {{model_output_dir}}
+  checkpoint_dir: {{model_output_dir}}/epoch_0
   checkpoint_files: [
-    hf_model_0001_0.pt,
-    hf_model_0002_0.pt
+    ft-model-00001-of-00002.safetensors,
+    ft-model-00002-of-00002.safetensors
   ]
   recipe_checkpoint: null
-  output_dir: {{model_output_dir}}/quant
+  #output_dir: {{model_output_dir}}/quant
+  output_dir: quant  
   model_type: PHI3_MINI
 
 device: cuda
