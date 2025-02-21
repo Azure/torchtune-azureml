@@ -406,3 +406,7 @@ FodyWeavers.xsd
 
 sft_dataset/
 dpo_dataset/
+
+# Test
+config_daekeun.yml
+training_sft_test.ipynb

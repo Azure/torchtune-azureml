@@ -1,0 +1,27 @@
+# Model arguments
+model:
+  _component_: torchtune.models.phi4.lora_phi4_14b
+
+checkpointer:
+  _component_: torchtune.training.FullModelHFCheckpointer
+  checkpoint_dir: {{model_output_dir}}/epoch_0
+  checkpoint_files: [
+    ft-model-00001-of-00006.safetensors,
+    ft-model-00002-of-00006.safetensors,
+    ft-model-00003-of-00006.safetensors,
+    ft-model-00004-of-00006.safetensors,
+    ft-model-00005-of-00006.safetensors,
+    ft-model-00006-of-00006.safetensors
+  ]
+  recipe_checkpoint: null
+  #output_dir: {{model_output_dir}}/quant
+  output_dir: quant  
+  model_type: PHI3_MINI
+
+device: cuda
+dtype: bf16
+seed: 1234
+
+quantizer:
+  _component_: torchtune.training.quantization.Int8DynActInt4WeightQuantizer
+  groupsize: 256
