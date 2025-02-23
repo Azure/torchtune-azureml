@@ -409,4 +409,5 @@ dpo_dataset/
 
 # Test
 config_daekeun.yml
+config_template.yml
 training_sft_test.ipynb

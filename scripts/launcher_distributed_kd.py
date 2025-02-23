@@ -12,6 +12,8 @@ from pathlib import Path
 from typing import Dict, Optional, Tuple
 from contextlib import contextmanager
 import torch.distributed as dist
+from util import get_epoch
+
 
 MASTER_ADDR = os.environ.get("MASTER_ADDR", "127.0.0.1")
 MASTER_PORT = os.environ.get("MASTER_PORT", "7777")
@@ -181,6 +183,8 @@ def run_eval() -> None:
     if GLOBAL_RANK in {-1, 0}:
         print("Running evaluation command...")
         run_command(full_command)
+    else:
+        print("Not on primary node. Skipping evaluation.")
 
 
 def run_quant() -> None:
@@ -412,18 +416,23 @@ if __name__ == "__main__":
         )
     )
 
+    epoch = get_epoch(args.tune_finetune_yaml)
+
     # Dynamically modify Evaluation yaml file.
     template = jinja_env.from_string(Path(args.tune_eval_yaml).open().read())
     Path(args.tune_eval_yaml).open("w").write(
         template.render(
-            model_dir=args.student_model_dir, model_output_dir=args.model_output_dir
+            model_dir=args.model_dir,
+            model_output_dir=os.path.join(args.model_output_dir, f"epoch_{epoch}"),
         )
     )
 
     # Dynamically modify Quantization yaml file.
     template = jinja_env.from_string(Path(args.tune_quant_yaml).open().read())
     Path(args.tune_quant_yaml).open("w").write(
-        template.render(model_output_dir=args.model_output_dir)
+        template.render(
+            model_output_dir=os.path.join(args.model_output_dir, f"epoch_{epoch}")
+        )
     )
 
     try:
