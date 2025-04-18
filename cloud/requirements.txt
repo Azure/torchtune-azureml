@@ -1,4 +1,4 @@
-torch==2.5.1
+torch==2.7.0.dev20250218+cu124
 torchvision==0.20.1 
 torchaudio==2.5.1
 azureml-core==1.59.0
