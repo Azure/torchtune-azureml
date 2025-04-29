@@ -3,7 +3,7 @@ openai==1.59.9
 scikit-learn==1.6.1
 datasets~=3.0.2
 wandb~=0.19.4
-transformers==4.48.1
+transformers==4.50.0
 pandas~=2.2
 plotly
 matplotlib
