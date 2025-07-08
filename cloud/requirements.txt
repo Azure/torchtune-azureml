@@ -24,7 +24,7 @@ py-cpuinfo==9.0.0
 torch-tb-profiler~=0.4.3
 azureml-sdk==1.59.0
 bitsandbytes~=0.45.2
-transformers==4.49.0
+transformers==4.52.1
 peft~=0.14.0
 accelerate~=1.4.0
 trl~=0.15.1
