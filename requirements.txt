@@ -1,4 +1,4 @@
-python-dotenv==1.0.1
+python-dotenv==1.2.2
 openai==1.59.9
 scikit-learn==1.6.1
 datasets~=3.0.2
